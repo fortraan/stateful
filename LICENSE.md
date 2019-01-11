@@ -1,4 +1,3 @@
-/*
 Copyright (c) 2019 j0 tech
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,37 +19,3 @@ THIS SOFTWARE IS PROVIDED ON AN 'AS-IS' BASIS, AND NO WARRANTY, NEITHER EXPRESS 
 IS PROVIDED WITH THE SOFTWARE. J0 TECH IS NOT RESPONSIBLE, NOR MAY BE HELD LIABLE, FOR ANY
 DAMAGE, LOSSES, ETC. CAUSED BY THE SOFTWARE. USAGE OF THE SOFTWARE IS AN IMPLICIT AGREEMENT
 TO THESE TERMS. FAILURE TO ABIDE BY THESE TERMS REPRESENTS A BREACH OF LICENSE.
- */
-
-package com.j0tech.stateful;
-
-/**
- * Represents a transition from one {@link State} to another.
- */
-public abstract class Transition {
-
-    State startState, endState;
-
-    /**
-     * Constructs a new Transition that points to the {@link State} specified by end.
-     * @param end end state for this transition
-     */
-    public Transition(State end) {
-        endState = end;
-    }
-
-    void registerStartState(State start) {
-        startState = start;
-    }
-
-    /**
-     * Called when this transition is activated.
-     */
-    public abstract void onActivated();
-
-    /**
-     * Checks if the conditions for the state machine to enter this transition are met.
-     * @return true if conditions are met, false otherwise
-     */
-    public abstract boolean shouldActivate();
-}
