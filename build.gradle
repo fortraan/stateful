@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+String artifactVersion = '1.0.0-RELEASE'
+
+group 'com.j0tech.stateful'
+version artifactVersion
+
+sourceCompatibility = JavaVersion.VERSION_1_10
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Name":"stateful",
+                "Implementation-Title":"stateful",
+                "Implementation-Version":artifactVersion,
+                "Implementation-Vendor":"j0 tech"
+        )
+    }
+}
